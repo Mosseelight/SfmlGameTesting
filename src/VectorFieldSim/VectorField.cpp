@@ -29,6 +29,7 @@ int vectorFieldYLenDir;
 float speed = 0.5f;
 int dirCount;
 int index = 0;
+int objectAmount = 50;
 
 //objects
 std::vector<sf::Vector2f>* objPos;
@@ -85,11 +86,15 @@ void VectorField::CreateVectorField()
             dirCount++;
         }
     }
-    Object obj;
-    obj.pos = sf::Vector2f(1 + (rand() % 1400),1 + (rand() % 1080));
-    obj.curDir = sf::Vector2f(0, 0);
-    objPos->push_back(obj.pos);
-    objCurDir->push_back(obj.curDir);
+    for (int i = 0; i < objectAmount; i++)
+    {
+        Object obj;
+        obj.pos = sf::Vector2f(i + (rand() % 1400),i + (rand() % 1080));
+        obj.curDir = sf::Vector2f(0, 0);
+        objPos->push_back(obj.pos);
+        objCurDir->push_back(obj.curDir);
+
+    }
 }
 
 void VectorField::ApplyFieldDirection()
@@ -157,7 +162,7 @@ void CheckBounds()
 void VectorField::DrawVectorSim(sf::RenderWindow& window, sf::Sprite& arrow)
 {
     CheckBounds();
-    sf::CircleShape circle(16.0f);
+    sf::CircleShape circle(12.0f);
     circle.setFillColor(sf::Color::Red);
     window.clear(sf::Color::White);
     for (int i = 0; i < vectorFieldXLen * vectorFieldYLen; i++)
