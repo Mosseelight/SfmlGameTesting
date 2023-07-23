@@ -89,7 +89,7 @@ void VectorField::CreateVectorField(int objectAmount)
     for (int i = 0; i < objectAmount; i++)
     {
         Object obj;
-        obj.pos = sf::Vector2f(i + (rand() % 1400),i + (rand() % 1080));
+        obj.pos = sf::Vector2f((rand() % 1400),(rand() % 1080));
         obj.curDir = sf::Vector2f(0, 0);
         objPos->push_back(obj.pos);
         objCurDir->push_back(obj.curDir);
