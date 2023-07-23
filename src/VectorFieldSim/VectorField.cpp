@@ -26,7 +26,7 @@ int vectorFieldYLenOffset = 0;
 float vectorFieldScale = 30.0f;
 int vectorFieldXLenDir;
 int vectorFieldYLenDir;
-float speed = 10.0f;
+float speed = 0.5f;
 int dirCount;
 int index = 0;
 
@@ -134,19 +134,19 @@ void CheckBounds()
         {
             if(objPos->at(i).x < 0)
             {
-                objPos->at(i) = sf::Vector2f(1920 * 0.5f,1080 * 0.5f);
+                objPos->at(i) = sf::Vector2f(((rand() % 1080) + vectorFieldXLenOffset),((rand() % 1080) + vectorFieldYLenOffset));
             }
             if(objPos->at(i).x > 1920)
             {
-                objPos->at(i) = sf::Vector2f(1920 * 0.5f,1080 * 0.5f);
+                objPos->at(i) = sf::Vector2f(((rand() % 1080) + vectorFieldXLenOffset),((rand() % 1080) + vectorFieldYLenOffset));
             }
             if(objPos->at(i).y < 0)
             {
-                objPos->at(i) = sf::Vector2f(1920 * 0.5f,1080 * 0.5f);
+                objPos->at(i) = sf::Vector2f(((rand() % 1080) + vectorFieldXLenOffset),((rand() % 1080) + vectorFieldYLenOffset));
             }
             if(objPos->at(i).y > 1080)
             {
-                objPos->at(i) = sf::Vector2f(1920 * 0.5f,1080 * 0.5f);
+                objPos->at(i) = sf::Vector2f(((rand() % 1080) + vectorFieldXLenOffset),((rand() % 1080) + vectorFieldYLenOffset));
             }
         }
 }
