@@ -29,7 +29,6 @@ int vectorFieldYLenDir;
 float speed = 0.5f;
 int dirCount;
 int index = 0;
-int objectAmount = 50;
 
 //objects
 std::vector<sf::Vector2f>* objPos;
@@ -53,8 +52,9 @@ float getDistance(sf::Vector2f& v1, sf::Vector2f& v2) {
     return std::sqrt(((v2.x - v1.x) * (v2.x - v1.x)) + ((v2.y - v1.y) * (v2.y - v1.y)));
 }
 
-void VectorField::CreateVectorField()
+void VectorField::CreateVectorField(int objectAmount)
 {
+    this->objectAmount = objectAmount;
     if(vectorFieldXLen % 2 == 1)
     {
         vectorFieldXLen++;

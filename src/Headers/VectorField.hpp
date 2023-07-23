@@ -6,7 +6,8 @@
 class VectorField
 {
 public:
-    void CreateVectorField();
+    int objectAmount;
+    void CreateVectorField(int objectAmount);
     void ApplyFieldDirection();
     void DrawVectorSim(sf::RenderWindow& window, sf::Sprite& arrow);
 };
