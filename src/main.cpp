@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
     sf::Texture texture;
-    texture.loadFromFile("src/Content/arrow.png");
+    texture.loadFromFile("Content/arrow.png");
     sf::Sprite arrow(texture);
     VectorField vectorField;
     if(argc != 2)

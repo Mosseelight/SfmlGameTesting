@@ -26,7 +26,7 @@ int vectorFieldYLenOffset = 0;
 float vectorFieldScale = 30.0f;
 int vectorFieldXLenDir;
 int vectorFieldYLenDir;
-float speed = 0.5f;
+float speed = 10.0f;
 int dirCount;
 int index = 0;
 
@@ -130,33 +130,25 @@ void VectorField::ApplyFieldDirection()
 
 void CheckBounds()
 {
-    if(objPos->size() < 1)
-    {
         for (int i = 0; i < objPos->size(); i++)
         {
             if(objPos->at(i).x < 0)
             {
-                objPos->at(i) = sf::Vector2f(vectorFieldXLenDir, vectorFieldYLenDir);
-                objCurDir->at(i) = sf::Vector2f(0,0);
+                objPos->at(i) = sf::Vector2f(1920 * 0.5f,1080 * 0.5f);
             }
             if(objPos->at(i).x > 1920)
             {
-                objPos->at(i) = sf::Vector2f(vectorFieldXLenDir, vectorFieldYLenDir);
-                objCurDir->at(i) = sf::Vector2f(0,0);
+                objPos->at(i) = sf::Vector2f(1920 * 0.5f,1080 * 0.5f);
             }
             if(objPos->at(i).y < 0)
             {
-                objPos->at(i) = sf::Vector2f(vectorFieldXLenDir, vectorFieldYLenDir);
-                objCurDir->at(i) = sf::Vector2f(0,0);
+                objPos->at(i) = sf::Vector2f(1920 * 0.5f,1080 * 0.5f);
             }
             if(objPos->at(i).y > 1080)
             {
-                objPos->at(i) = sf::Vector2f(vectorFieldXLenDir, vectorFieldYLenDir);
-                objCurDir->at(i) = sf::Vector2f(0,0);
+                objPos->at(i) = sf::Vector2f(1920 * 0.5f,1080 * 0.5f);
             }
         }
-        
-    }
 }
 
 void VectorField::DrawVectorSim(sf::RenderWindow& window, sf::Sprite& arrow)
